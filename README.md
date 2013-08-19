@@ -46,32 +46,32 @@ Homebrewにて導入
 
 
 ## 4. ruby2.0.0-p247のインストール
-rbenvは単なるバージョン管理システムなので、rubyのインストール機能はありません。
-まずはruby-buildというものを使ってrbenvにインストール機能をつけます。
-インストールした後は.bashrcなどに ```eval "$(rbenv init -)"```というを追記します。
+### ruby-buidldのインストール
+rbenvは単なるバージョン管理システムなので、rubyのインストール機能はありません。  
+まずはruby-buildというものを使ってrbenvにインストール機能をつけます。  
+インストールした後は.bashrcなどに ```eval "$(rbenv init -)"```というを追記します。  
 
 	$ brew install --HEAD ruby-build
 	$ echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 	$ source ~/.bashrc
 
-
+### インストールできるか確認
 つぎに、```2.0.0-p247```がインストールできるかどうか見ます。  
-```2.0.0-p247```が表示されていればOK。  
+以下のコマンドを実行して```2.0.0-p247```が表示されていればOK。
 
-	$ rbenv install -l
+	$ brew install -l
 
-されない場合は以下を実行  
+表示されない場合は以下を実行します。
 
 	$ brew upgrade ruby-build
-	
-実際にインストール。  
+
+### 実際にインストール
 
 	$ rbenv install 2.0.0-p247
-	
-```2.0.0-p247```を標準で使うバージョンに設定する。  
+
+標準で使うバージョンを```2.0.0-p247```に設定する。  
 
 	$ rbenv global 2.0.0-p247
-
 
 ## 3. Rails4.0のインストール
 最新版 rails 4.0.0 をインストールします。  
