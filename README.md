@@ -69,6 +69,24 @@ rbenvは単なるバージョン管理システムなので、rubyのインス�
 
 	$ rbenv install 2.0.0-p247
 
+
+### インストールがなかなか進まない時
+ホスティングサーバに障害が起きている可能性があるので```/usr/local/share/ruby-build/2.0.0-p247```を以下のように書き換える。
+具体的にはruby-2.0.0-p247の参照先を
+
+	http://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p247.tar.gz
+
+から
+
+	http://ftp.iij.ad.jp/pub/lang/ruby/2.0/ruby-2.0.0-p247.tar.gz
+
+変更する。変更後のファイル内容は以下のとおり。
+
+	install_package "openssl-1.0.1e" "https://www.openssl.org/source/openssl-1.0.1e.tar.gz#66bf6f10f060d561929de96f9dfe5b8c" mac_openssl --if has_broken_mac_openssl  
+	install_package "ruby-2.0.0-p247" "http://ftp.iij.ad.jp/pub/lang/ruby/2.0/ruby-2.0.0-p247.tar.gz#c351450a0bed670e0f5ca07da3458a5b" standard verify_openssl
+
+### 最後に
+
 標準で使うバージョンを```2.0.0-p247```に設定する。  
 
 	$ rbenv global 2.0.0-p247
